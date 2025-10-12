@@ -1,0 +1,22 @@
+{
+  "name": "playwright-vasif",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gingersnap.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasifwill/vasif-playwright.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasifwill/vasif-playwright/issues"
+  },
+  "homepage": "https://github.com/vasifwill/vasif-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.7.2",
+    "dotenv": "^17.2.3"
+  }
+}
