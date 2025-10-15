@@ -2,10 +2,12 @@ const { test, expect } = require('@playwright/test');
 require('dotenv').config();
 const { loginWithEnv } = require('../helpers/login');
 const { DashboardPage } = require('../pages/dashboardPageObject');
+const { getColumn } = require('../helpers/getColumn');
+
 
 // Test Case 1: Verify "Implement user authentication" is in the "To Do" column.
 // Confirm tags: "Feature" and "High Priority".
-test.describe('Test Case 1 – To Do Board Verification', () => {
+test.describe('Test Case 1 – To Do Board Verification in Web App Dashboard', () => {
 
   test('Login and verify "Implement user authentication" card and tags', async ({ page }) => {
 
@@ -20,9 +22,7 @@ test.describe('Test Case 1 – To Do Board Verification', () => {
 
 
     // 3 Locate "To Do" column
-    const toDoColumn = page.locator('div', {
-      has: page.getByRole('heading', { level: 2, name: /to do/i })
-    });
+    const toDoColumn = getColumn(page, /to do/i);
 
     // 4 Locate the specific card inside "To Do"
     const authCard = toDoColumn

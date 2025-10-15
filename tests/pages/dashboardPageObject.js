@@ -5,12 +5,6 @@ class DashboardPage {
     this.page = page;
   }
 
-  /**
-   * Clicks on the given project name in the sidebar and verifies
-   * that the main header <h1> of that project becomes visible.
-   * 
-   * @param {string} projectName 'Web Application', 'Mobile Application', 'Marketing Campaign'
-   */
   async clickProject(projectName) {
     // Step 1️: Locate and click the project button in the sidebar (h2 text inside button)
     const projectButton = this.page.getByRole('button', { name: new RegExp(projectName, 'i') });
