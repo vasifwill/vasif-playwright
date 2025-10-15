@@ -24,27 +24,22 @@ test.describe('Test Case 1 – To Do Board Verification in Web App Dashboard', (
     // 3 Locate "To Do" column
     const toDoColumn = getColumn(page, /to do/i);
 
-    // 4 Locate the specific card inside "To Do"
-    const authCard = toDoColumn
-      .locator('div.bg-white.p-4.rounded-lg.shadow-sm.border')
-      .filter({
-        has: page.getByRole('heading', { level: 3, name: /implement user authentication/i })
-      });
-
+    
     // 4 Verify card title is visible
-    await test.step('Verify "Implement user authentication" card is visible', async () => {
-      const authCardTitle = toDoColumn.getByRole('heading', {
-        level: 3,
+    await test.step('Verify "Implement user authentication" card is visible', async () => {const authCardTitle = toDoColumn.getByRole('heading', {level: 3,
         name: /implement user authentication/i
       });
       await expect(authCardTitle).toBeVisible();
     });
 
-    // 6 Verify "feature" and "high priority" tags inside the card
+    // 5 Locate the specific card inside "To Do"
+    const authCard = toDoColumn.locator('div.bg-white.p-4.rounded-lg.shadow-sm.border').filter({has: page.getByRole('heading', { level: 3, name: /implement user authentication/i })});
+
+    //Verify "feature" tag inside the card
     await test.step('Verify "Feature" tag is visible', async () => {
       await expect(authCard.locator('span:has-text("feature")')).toBeVisible();
     });
-
+    //Verify "high priority" tag inside the card
     await test.step('Verify "High Priority" tag is visible', async () => {
       await expect(authCard.locator('span:has-text("high priority")')).toBeVisible();
     });

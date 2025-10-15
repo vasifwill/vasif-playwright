@@ -21,8 +21,6 @@ test.describe('Test Case 6 – Done column verification in Mobile App Dashboard'
     // 3 Locate "Done" column
     const doneColumn = getColumn(page, /Done/i);
 
-    
-
     // 4 Verify card title App icon design is visible
     await test.step('Verify "App icon design" card is visible', async () => {
       const authCardTitle = doneColumn.getByRole('heading', {level: 3,name: /App icon design/i});

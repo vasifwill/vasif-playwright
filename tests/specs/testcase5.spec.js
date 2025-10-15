@@ -19,7 +19,6 @@ test.describe('Test Case 5 – In Progress Board Verification in Mobile Applicat
       await dashboard.clickProject('Mobile Application');
     });
 
-
     // 3 Locate "In Progress" column
     const inProgressColumn = getColumn(page, /In Progress/i);
 
